@@ -20,34 +20,60 @@ Left_Motor_speed = 0
 Right_Motor = motor.DCMotor( pwm_Ra, pwm_Rb)
 Right_Motor_speed = 0
 
+
+def left():
+    Right_Motor_speed = 1
+    Right_Motor.throttle = Right_Motor_speed
+    Left_Motor_speed = -1
+    Left_Motor.throttle = Left_Motor_speed
+    time.sleep(4)
+    
+def backward():
+    Right_Motor_speed = -1
+    Right_Motor.throttle = Right_Motor_speed
+    Left_Motor_speed = -1
+    Left_Motor.throttle = Left_Motor_speed
+    time.sleep(1)
+    
 def forward():
     Right_Motor_speed = 1
     Right_Motor.throttle = Right_Motor_speed
-    time.sleep(3)
     Left_Motor_speed = 1
     Left_Motor.throttle = Left_Motor_speed
-    time.sleep(3)
+    time.sleep(6)
 
-while True:
-    forward()
-'''
-
-def: backward
+def right():
     Right_Motor_speed = -1
     Right_Motor.throttle = Right_Motor_speed
-    time.sleep(3)
-    Left_Motor_speed = -1
-    Left_Motor.throttle = Left_Motor_speed
-    time.sleep(3)
-
-def: forward
-    Right_Motor_speed = 1
-    Right_Motor.throttle = Right_Motor_speed
-    time.sleep(3)
-
-def: backward
     Left_Motor_speed = 1
     Left_Motor.throttle = Left_Motor_speed
     time.sleep(3)
-'''
+    
+def forward():
+    Right_Motor_speed = 1
+    Right_Motor.throttle = Right_Motor_speed
+    Left_Motor_speed = 1
+    Left_Motor.throttle = Left_Motor_speed
+    time.sleep(1)
+    
+def left():
+    Right_Motor_speed = 1
+    Right_Motor.throttle = Right_Motor_speed
+    Left_Motor_speed = -1
+    Left_Motor.throttle = Left_Motor_speed
+    time.sleep(7)
+
+while True:
+    left()
+    time.sleep(4)
+    backward()
+    time.sleep(1)
+    forward() 
+    time.sleep(6)
+    right()
+    time.sleep(3)
+    forward()
+    time.sleep(1)
+    left()
+    time.sleep(7)
 
